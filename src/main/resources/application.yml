@@ -1,0 +1,9 @@
+upstreams:
+  - name: jsonplaceholder
+    url: http://jsonplaceholder.typicode.com
+
+routes:
+  - name: getPosts
+    upstream: jsonplaceholder
+    type: REST
+    method: GET

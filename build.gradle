@@ -1,0 +1,37 @@
+plugins {
+    id "java"
+}
+
+group = "com.github.mroose"
+version = "latest"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+ext {
+    jakartaBomVersion = "10.0.0"
+    jacksonBomVersion = "2.15.2"
+    jsonPathVersion = "2.8.0"
+    okHttpBomVersion = "4.11.0"
+}
+
+dependencies {
+    implementation platform("jakarta.platform:jakarta.jakartaee-bom:$jakartaBomVersion")
+    implementation "jakarta.servlet:jakarta.servlet-api"
+    implementation "jakarta.ws.rs:jakarta.ws.rs-api"
+
+    implementation platform("com.fasterxml.jackson:jackson-bom:$jacksonBomVersion")
+    implementation "com.fasterxml.jackson.core:jackson-databind"
+
+    implementation platform("com.squareup.okhttp3:okhttp-bom:$okHttpBomVersion")
+    implementation "com.squareup.okhttp3:okhttp"
+
+    implementation "com.jayway.jsonpath:json-path:$jsonPathVersion"
+}
+
+tasks.named("test") {
+    useJUnitPlatform()
+}
