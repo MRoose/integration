@@ -1,6 +1,6 @@
-package com.github.mroose.integration.http.mapper;
+package com.github.mroose.integration.http.provider.jdk.mapper;
 
-import com.github.mroose.integration.http.domain.HttpRequest;
+import com.github.mroose.integration.http.core.domain.HttpRequest;
 import jakarta.ws.rs.core.UriBuilder;
 
 import java.net.URI;

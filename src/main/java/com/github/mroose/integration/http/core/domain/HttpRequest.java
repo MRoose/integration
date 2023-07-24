@@ -1,6 +1,6 @@
-package com.github.mroose.integration.http.domain;
+package com.github.mroose.integration.http.core.domain;
 
-import com.github.mroose.integration.http.builder.HttpRequestBuilder;
+import com.github.mroose.integration.http.core.builder.HttpRequestBuilder;
 
 import java.util.List;
 import java.util.Map;

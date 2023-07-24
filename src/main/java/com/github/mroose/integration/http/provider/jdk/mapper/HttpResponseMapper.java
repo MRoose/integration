@@ -1,6 +1,6 @@
-package com.github.mroose.integration.http.mapper;
+package com.github.mroose.integration.http.provider.jdk.mapper;
 
-import com.github.mroose.integration.http.domain.HttpResponse;
+import com.github.mroose.integration.http.core.domain.HttpResponse;
 
 import java.net.http.HttpHeaders;
 import java.util.HashMap;
