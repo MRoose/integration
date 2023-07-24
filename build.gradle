@@ -16,6 +16,7 @@ ext {
     jacksonBomVersion = "2.15.2"
     jsonPathVersion = "2.8.0"
     okHttpBomVersion = "4.11.0"
+    reactorBomVersion = "2022.0.9"
 }
 
 dependencies {
@@ -25,11 +26,16 @@ dependencies {
 
     implementation platform("com.fasterxml.jackson:jackson-bom:$jacksonBomVersion")
     implementation "com.fasterxml.jackson.core:jackson-databind"
+    implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-xml"
+
+    implementation "com.jayway.jsonpath:json-path:$jsonPathVersion"
 
     implementation platform("com.squareup.okhttp3:okhttp-bom:$okHttpBomVersion")
     implementation "com.squareup.okhttp3:okhttp"
 
-    implementation "com.jayway.jsonpath:json-path:$jsonPathVersion"
+    implementation platform("io.projectreactor:reactor-bom:$reactorBomVersion")
+    implementation "io.projectreactor.netty:reactor-netty-core"
+    implementation "io.projectreactor.netty:reactor-netty-http"
 }
 
 tasks.named("test") {

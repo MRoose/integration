@@ -2,20 +2,25 @@ package com.github.mroose.integration.http.builder;
 
 import com.github.mroose.integration.http.domain.HttpMethod;
 import com.github.mroose.integration.http.domain.HttpRequest;
+import com.github.mroose.integration.http.util.JsonUtil;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static com.github.mroose.integration.http.mapper.JacksonMapper.objectToString;
-
 public class HttpRequestBuilder {
+
+    private JsonUtil jsonUtil;
 
     private HttpMethod httpMethod;
     private String url;
     private Map<String, List<String>> headers = new HashMap<>();
     private Map<String, List<String>> queries = new HashMap<>();
     private String body;
+
+    public HttpRequestBuilder() {
+        this.jsonUtil = JsonUtil.getInstance();
+    }
 
     public HttpRequestBuilder httpMethod(HttpMethod httpMethod) {
         this.httpMethod = httpMethod;
@@ -61,12 +66,12 @@ public class HttpRequestBuilder {
     }
 
     public HttpRequestBuilder body(Map<String, String> body) {
-        this.body = objectToString(body);
+        this.body = jsonUtil.serialize(body);
         return this;
     }
 
     public HttpRequestBuilder body(Object body) {
-        this.body = objectToString(body);
+        this.body = jsonUtil.serialize(body);
         return this;
     }
 

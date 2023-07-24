@@ -2,5 +2,6 @@ package com.github.mroose.integration.http.domain;
 
 public enum HttpProvider {
     JDK,
-    SQUARE
+    SQUARE,
+    REACTOR_NETTY
 }
