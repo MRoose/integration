@@ -1,4 +1,4 @@
-package com.github.mroose.integration.http.provider.jdk.mapper;
+package com.github.mroose.integration.http.core;
 
 import com.github.mroose.integration.http.core.domain.HttpResponse;
 
@@ -16,7 +16,7 @@ public class HttpResponseMapper {
 
         HttpResponse myHttpResponse = HttpResponse.builder()
             .statusCode(javaHttpResponse.statusCode())
-            .headers(headers)
+//            .headers(headers)
             .body(javaHttpResponse.body())
             .build();
 

@@ -19,7 +19,7 @@ public class HttpClient {
         return new HttpClientBuilder();
     }
 
-    public HttpClient(HttpProviderType httpProviderType, HttpVersion httpVersion) {
+    public HttpClient(HttpProviderType httpProviderType) {
         this.httpProviderType = httpProviderType;
         this.httpProvider = HttpProvider.getProvider(httpProviderType);
     }
