@@ -3,21 +3,17 @@ package com.github.mroose.integration.http.provider.reactor.provider;
 import com.github.mroose.integration.http.core.provider.HttpProvider;
 import com.github.mroose.integration.http.core.domain.HttpRequest;
 import com.github.mroose.integration.http.core.domain.HttpResponse;
-import com.github.mroose.integration.http.core.provider.HttpProviderType;
 
-public class ReactorHttpProvider implements HttpProvider {
-
-    private static ReactorHttpProvider INSTANCE;
+public final class ReactorHttpProvider implements HttpProvider {
 
     private ReactorHttpProvider() {}
 
-    public static synchronized ReactorHttpProvider getInstance() {
-        return INSTANCE == null ? new ReactorHttpProvider() : INSTANCE;
+    private static final class InstanceHolder {
+        private static final ReactorHttpProvider INSTANCE = new ReactorHttpProvider();
     }
 
-    @Override
-    public HttpProviderType getType() {
-        return HttpProviderType.REACTOR;
+    public static ReactorHttpProvider getInstance() {
+        return InstanceHolder.INSTANCE;
     }
 
     @Override

@@ -1,7 +1,7 @@
 package com.github.mroose.integration.http.core.builder;
 
 import com.github.mroose.integration.http.core.HttpClient;
-import com.github.mroose.integration.http.core.provider.HttpProviderType;
+import com.github.mroose.integration.http.core.domain.HttpProviderType;
 
 public class HttpClientBuilder {
 

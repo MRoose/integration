@@ -1,4 +1,4 @@
-package com.github.mroose.integration.http.core.provider;
+package com.github.mroose.integration.http.core.domain;
 
 public enum HttpProviderType {
     JDK,

@@ -3,21 +3,17 @@ package com.github.mroose.integration.http.provider.square.provider;
 import com.github.mroose.integration.http.core.provider.HttpProvider;
 import com.github.mroose.integration.http.core.domain.HttpRequest;
 import com.github.mroose.integration.http.core.domain.HttpResponse;
-import com.github.mroose.integration.http.core.provider.HttpProviderType;
 
-public class SquareHttpProvider implements HttpProvider {
-
-    private static SquareHttpProvider INSTANCE;
+public final class SquareHttpProvider implements HttpProvider {
 
     private SquareHttpProvider() {}
 
-    public static synchronized SquareHttpProvider getInstance() {
-        return INSTANCE == null ? new SquareHttpProvider() : INSTANCE;
+    private static final class InstanceHolder {
+        private static final SquareHttpProvider INSTANCE = new SquareHttpProvider();
     }
 
-    @Override
-    public HttpProviderType getType() {
-        return HttpProviderType.SQUARE;
+    public static SquareHttpProvider getInstance() {
+        return InstanceHolder.INSTANCE;
     }
 
     @Override

@@ -5,8 +5,7 @@ import com.github.mroose.integration.http.core.domain.HttpRequest;
 import com.github.mroose.integration.http.core.domain.HttpResponse;
 import com.github.mroose.integration.http.core.domain.HttpVersion;
 import com.github.mroose.integration.http.core.provider.HttpProvider;
-import com.github.mroose.integration.http.core.provider.HttpProviderType;
-import com.github.mroose.integration.http.util.JsonUtil;
+import com.github.mroose.integration.http.core.domain.HttpProviderType;
 
 public class HttpClient {
 
