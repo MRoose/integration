@@ -9,7 +9,6 @@ import java.util.List;
 
 public class JsonUtil {
 
-    private static JsonUtil INSTANCE;
     private final JsonMapper jsonMapper;
 
     private JsonUtil() {
@@ -17,8 +16,12 @@ public class JsonUtil {
         jsonMapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
     }
 
-    public static synchronized JsonUtil getInstance() {
-        return INSTANCE == null ? new JsonUtil() : INSTANCE;
+    private static final class InstanceHolder {
+        private static final JsonUtil INSTANCE = new JsonUtil();
+    }
+
+    public static JsonUtil getInstance() {
+        return InstanceHolder.INSTANCE;
     }
 
     public String serialize(Object content) {

@@ -1,6 +1,6 @@
-package com.github.mroose.integration.http.core.builder;
+package com.github.mroose.integration.http.builder;
 
-import com.github.mroose.integration.http.core.domain.HttpResponse;
+import com.github.mroose.integration.http.domain.HttpResponse;
 
 import java.util.HashMap;
 import java.util.List;

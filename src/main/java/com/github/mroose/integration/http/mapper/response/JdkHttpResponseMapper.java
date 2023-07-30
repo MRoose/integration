@@ -1,6 +1,4 @@
-package com.github.mroose.integration.http.provider.jdk.mapper;
-
-import com.github.mroose.integration.http.core.mapper.HttpResponseMapper;
+package com.github.mroose.integration.http.mapper.response;
 
 import java.net.http.HttpResponse;
 
@@ -18,8 +16,8 @@ public class JdkHttpResponseMapper implements HttpResponseMapper<HttpResponse<St
     }
 
     @Override
-    public com.github.mroose.integration.http.core.domain.HttpResponse mapResponse(HttpResponse<String> httpResponse) {
-        return com.github.mroose.integration.http.core.domain.HttpResponse
+    public com.github.mroose.integration.http.domain.HttpResponse mapResponse(HttpResponse<String> httpResponse) {
+        return com.github.mroose.integration.http.domain.HttpResponse
                 .builder()
                 .statusCode(httpResponse.statusCode())
                 .headers(httpResponse.headers().map())

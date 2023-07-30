@@ -1,7 +1,7 @@
-package com.github.mroose.integration.http.core.builder;
+package com.github.mroose.integration.http.builder;
 
-import com.github.mroose.integration.http.core.domain.HttpMethod;
-import com.github.mroose.integration.http.core.domain.HttpRequest;
+import com.github.mroose.integration.http.domain.HttpMethod;
+import com.github.mroose.integration.http.domain.HttpRequest;
 import com.github.mroose.integration.http.util.JsonUtil;
 
 import java.util.HashMap;

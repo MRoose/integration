@@ -1,6 +1,5 @@
-package com.github.mroose.integration.http.provider.jdk.mapper;
+package com.github.mroose.integration.http.mapper.request;
 
-import com.github.mroose.integration.http.core.mapper.HttpRequestMapper;
 import jakarta.ws.rs.core.UriBuilder;
 
 import java.net.URI;
@@ -24,7 +23,7 @@ public class JdkHttpRequestMapper implements HttpRequestMapper<HttpRequest> {
     }
 
     @Override
-    public HttpRequest mapRequest(com.github.mroose.integration.http.core.domain.HttpRequest httpRequest) {
+    public HttpRequest mapRequest(com.github.mroose.integration.http.domain.HttpRequest httpRequest) {
         HttpRequest.Builder httpRequestBuilder = HttpRequest.newBuilder()
                 .uri(uriMap(httpRequest.getUrl(), httpRequest.getQueries()))
                 .method(httpRequest.getHttpMethod().name(), bodyMap(httpRequest.getBody()));

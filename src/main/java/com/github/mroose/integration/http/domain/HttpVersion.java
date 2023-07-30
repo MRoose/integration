@@ -1,4 +1,4 @@
-package com.github.mroose.integration.http.core.domain;
+package com.github.mroose.integration.http.domain;
 
 public enum HttpVersion {
     HTTP_1_0,

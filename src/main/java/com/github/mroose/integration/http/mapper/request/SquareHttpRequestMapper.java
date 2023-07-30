@@ -1,7 +1,6 @@
-package com.github.mroose.integration.http.provider.square.mapper;
+package com.github.mroose.integration.http.mapper.request;
 
-import com.github.mroose.integration.http.core.domain.HttpMethod;
-import com.github.mroose.integration.http.core.mapper.HttpRequestMapper;
+import com.github.mroose.integration.http.domain.HttpMethod;
 
 import okhttp3.*;
 
@@ -11,7 +10,11 @@ import java.util.Map;
 public class SquareHttpRequestMapper implements HttpRequestMapper {
 
     @Override
-    public Request map(com.github.mroose.integration.http.core.domain.HttpRequest httpRequest) {
+    public Object mapRequest(com.github.mroose.integration.http.domain.HttpRequest httpRequest) {
+        return null;
+    }
+
+    public Request map(com.github.mroose.integration.http.domain.HttpRequest httpRequest) {
         Request.Builder builder = new Request.Builder()
                 .url(httpRequest.getUrl());
 
@@ -49,7 +52,7 @@ public class SquareHttpRequestMapper implements HttpRequestMapper {
         return builder.build();
     }
 
-    public Request mapToOkHttpRequest(com.github.mroose.integration.http.core.domain.HttpRequest httpRequest) {
+    public Request mapToOkHttpRequest(com.github.mroose.integration.http.domain.HttpRequest httpRequest) {
         Request.Builder builder = new Request.Builder()
                 .url(httpRequest.getUrl());
 
